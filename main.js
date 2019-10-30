@@ -1,13 +1,9 @@
 const { app, BrowserWindow, systemPreferences, nativeTheme } = require('electron')
 const fs = require('fs')
 const path = require('path')
-const http = require('http')
 
 let mainWindow
 let contents
-let darkReaderJs
-let darkCSS
-let darkCSSKey
 
 function createWindow () {
   mainWindow = new BrowserWindow({width: 1024, height: 768})
@@ -17,11 +13,9 @@ function createWindow () {
   })
 
   if (process.platform === 'darwin') {
-    darkReaderJs = fs.readFileSync(path.join(__dirname, 'darkreader.js'), 'utf8')
-    darkCSS = fs.readFileSync(path.join(__dirname, 'dark.css'), 'utf8')
+    var darkReaderJs = fs.readFileSync(path.join(__dirname, 'node_modules','darkreader','darkreader.js'), 'utf8')
     mainWindow.webContents.on('dom-ready', () => {
       mainWindow.webContents.executeJavaScript(darkReaderJs)
-      mainWindow.webContents.insertCSS(darkCSS)
       updateTheme()
     });
     systemPreferences.subscribeNotification('AppleInterfaceThemeChangedNotification', updateTheme)

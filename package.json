@@ -9,6 +9,9 @@
   },
   "license": "MIT",
   "homepage": "https://aterenin.github.com/Photos",
+  "dependencies": {
+    "darkreader": "*"
+  },
   "devDependencies": {
     "electron": "*",
     "electron-packager": "*"
