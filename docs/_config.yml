@@ -1,0 +1,7 @@
+title: Photos
+description: An app for Google Photos on the desktop
+markdown: kramdown
+theme: jekyll-theme-slate
+exclude:
+  - Gemfile
+  - Gemfile.lock
