@@ -1,6 +1,6 @@
 {
   "name": "Photos",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Google Photos desktop app",
   "main": "main.js",
   "repository": {
