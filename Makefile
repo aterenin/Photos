@@ -8,8 +8,11 @@ clean_install:
 node_modules:
 	npm install
 
-build.darwin: install target/icons
+build.darwin-x64: install target/icons
 	node_modules/.bin/electron-packager . 'Google Photos' --platform darwin --arch=x64 --overwrite --icon=target/icons/icon.icns --no-asar --ignore="docs/" --out=target
+
+build.darwin-arm64: install target/icons
+	node_modules/.bin/electron-packager . 'Google Photos' --platform darwin --arch=arm64 --overwrite --icon=target/icons/icon.icns --no-asar --ignore="docs/" --out=target
 
 clean:
 	rm -rf target/
